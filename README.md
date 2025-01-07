@@ -4,7 +4,11 @@ Avottraction is a specialized machine learning model built to evaluate and quant
 
 ## 🗒️ Overview 
 
-Overview/tech stack goes here!
+Tech Areas: ML, Web Dev
+
+- Tools/Technologies:
+  - Machine Learning Model:
+  - Web Dev: HTML, CSS
 
 ## 👫 Project Members
 
@@ -16,5 +20,6 @@ Project Members: {Project Members}
 
 ## 💻 Set Up
 [Avottraction](https://aquamarine-handbell-a5f.notion.site/Avottraction-16e172c5e5608099acc1c790545f560d?pvs=4)
+
 This notion has everything you’ll ever need!
-The calendar is the main resource, check it frequently. We will communicate through Facebook Messenger.
+The calendar is the main resource, check it frequently. We will communicate through Facebook Messenger or iMessage.
