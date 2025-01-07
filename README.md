@@ -15,6 +15,6 @@ Project Leaders: Vivek and Heidy
 Project Members: {Project Members}
 
 ## 💻 Set Up
-https://aquamarine-handbell-a5f.notion.site/Avottraction-16e172c5e5608099acc1c790545f560d?pvs=4
+[Avottraction](https://aquamarine-handbell-a5f.notion.site/Avottraction-16e172c5e5608099acc1c790545f560d?pvs=4)
 This notion has everything you’ll ever need!
 The calendar is the main resource, check it frequently. We will communicate through Facebook Messenger.
