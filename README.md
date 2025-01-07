@@ -19,7 +19,42 @@ Project Leaders: Vivek and Heidy
 Project Members: {Project Members}
 
 ## 💻 Set Up
-[Avottraction](https://aquamarine-handbell-a5f.notion.site/Avottraction-16e172c5e5608099acc1c790545f560d?pvs=4)
+***[Avottraction](https://aquamarine-handbell-a5f.notion.site/Avottraction-16e172c5e5608099acc1c790545f560d?pvs=4)***
 
 This notion has everything you’ll ever need!
 The calendar is the main resource, check it frequently. We will communicate through Facebook Messenger or iMessage.
+
+
+<details>
+  <summary>Cloning and Repo Setup</summary>
+  <br>
+
+1. Create a new repo on GitHub
+
+2. Clone our skeleton code to your local machine:
+
+   ```bash
+   git clone <PROJECT URL HERE>
+   ```
+
+3. Set the remote origin to be YOUR newly created repo (this is so you can make commits to your own repo on GitHub):
+
+   ```bash
+   git remote set-url origin <your newly made GitHub repo url>
+   ```
+
+4. Set the remote “start origin” to be OUR skeleton code repo (this is so you can get updates to our starter code):
+
+   ```bash
+   git remote add starter <PROJECT URL HERE>
+   ```
+
+5. Now you can get the latest starter code with the following command:
+
+   ```bash
+   git pull starter main
+   ```
+
+6. Send Vivek and Heidy the link to your repo via Messenger or iMessage
+
+</details>
