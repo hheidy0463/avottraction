@@ -4,7 +4,7 @@ Avottraction is a specialized machine learning model built to evaluate and quant
 
 ## 🗒️ Overview 
 
-Tech Areas: ML, Web Dev
+- Tech Areas: ML, Web Dev
 
 - Tools/Technologies:
   - Machine Learning Model:
