@@ -36,7 +36,6 @@ def preprocess_text(text):
     words = [lemmatizer.lemmatize(word) for word in words]
     # Join words to a single string
     text = ' '.join(words)
-    # print(text)
     return text.strip
 
 class TextProcessor(BaseEstimator, TransformerMixin):
