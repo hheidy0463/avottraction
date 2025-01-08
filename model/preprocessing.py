@@ -44,10 +44,12 @@ class TextProcessor(BaseEstimator, TransformerMixin):
     """
     def __init__(self, preprocess_func=None):
         self.preprocess_func = preprocess_func if preprocess_func else preprocess_text
+
     def fit (self, X, y=None):
         """
         Update if needed
         """
         return self
+    
     def transform(self, X):
         return X.apply(self.preprocess_func)
