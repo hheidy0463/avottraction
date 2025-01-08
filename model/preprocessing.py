@@ -1,10 +1,22 @@
+# preprocessing.oy
+
 import re
 import string
+import emoji
+import nltk
 from sklearn.base import BaseEstimator, TransformerMixin
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 import contractions
 
+nltk.download('stopwords')
+nltk.download('wordnet')
+
+emoticon_map = {
+    ":-)": ":smiley_face:",
+    ":p": ":playful_tongue:",
+    # etc.
+}
 
 def preprocess_text(text):
     text = text.lower()
@@ -20,12 +32,15 @@ def preprocess_text(text):
     text = re.sub(r'#\w+', '', text)
     # Remove mentions
     text = re.sub(r'@\w+', '', text)
-    # Remove special characters 
-    text = re.sub(r'[^a-zA-Z\s.,]', '', text)
     # Remove extra whitespace
     text = re.sub(r'\s+', ' ', text).strip()
-    # Remove punctuation
-    text = re.sub(f'[{re.escape(string.punctuation)}]', ' ', text)
+    # Convert emojis to text
+    text = emoji.demojize(text, language='en')
+
+    for x in emoticon_map:
+        if x in text:
+            text = text.replace(x, emoticon_map[x])
+
     # Tokenize text
     words = text.split()
     # Remove stop words
@@ -36,7 +51,7 @@ def preprocess_text(text):
     words = [lemmatizer.lemmatize(word) for word in words]
     # Join words to a single string
     text = ' '.join(words)
-    return text.strip
+    return text.strip()
 
 class TextProcessor(BaseEstimator, TransformerMixin):
     """
