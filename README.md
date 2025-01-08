@@ -58,3 +58,25 @@ The calendar is the main resource, check it frequently. We will communicate thro
 6. Send Vivek and Heidy the link to your repo via Messenger or iMessage
 
 </details>
+
+
+
+<details>
+  <summary>Installation/Dependencies</summary>
+  <br>
+
+1. Install via terminal:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+2. Run the following (in a Python shell or script):
+
+   ```bash
+    import nltk
+    nltk.download('stopwords')
+    nltk.download('wordnet')
+  
+  ```
+
+</details> 
