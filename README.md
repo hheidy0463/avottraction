@@ -81,7 +81,4 @@ The calendar is the main resource, check it frequently. We will communicate thro
     import nltk
     nltk.download('stopwords')
     nltk.download('wordnet')
-  
-  ```
-
-</details> 
+  ``` </details>
