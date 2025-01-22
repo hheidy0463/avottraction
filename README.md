@@ -1,6 +1,6 @@
 # 🥑 Avottraction - Codeology Sp25
 
-Avottraction is a specialized machine learning model built to evaluate and quantify “attraction” or “RIZZZZZZ” levels in text. By analyzing user-provided content—such as social media posts, chat messages, and more—Avottraction generates an “Avottraction Score” to classify how strongly the text resonates on an attraction scale. Whether you’re curious about the charm of a witty tweet, the allure of a personal message, or the magnetism of brand copy, Avottraction leverages NLP techniques to deliver insights into what makes certain text catch our interest more than others.
+Avottraction uses a modern approach to detect “attraction signals” in text through advanced natural language processing. First, the text is cleaned by removing special characters, expanding contractions, and more so that only meaningful information remains. Then, we fine-tune a DistilBERT model to learn subtle context. By splitting the data carefully, we can accurately measure performance and avoid overfitting. Using the Hugging Face Trainer framework simplifies training and evaluation, and early stopping helps us quit when the model stops improving. Overall, Avottraction is flexible enough to adapt to different fields or integrate into chat systems, showing practical ways to apply text classification.
 
 ## 🗒️ Overview 
 
