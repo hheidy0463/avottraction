@@ -14,6 +14,7 @@ Avottraction uses a modern approach to detect “attraction signals” in text t
   - PyTorch, NLTK, and regex for preprocessing
   - pandas and numpy for data manipulation
   - Web Dev: HTML, CSS
+  - Data: OpenAI Api, Reddit PRAW
 
 ## 👫 Project Members
 
