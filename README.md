@@ -22,7 +22,7 @@ Project Manager: Miller Liu
 
 Project Leaders: Vivek and Heidy
 
-Project Members: {Project Members}
+Project Members: Sanghun, Brooke, Sajiv, Karen, Shriyaa
 
 ## 💻 Set Up
 ***[Avottraction](https://aquamarine-handbell-a5f.notion.site/Avottraction-16e172c5e5608099acc1c790545f560d?pvs=4)***
