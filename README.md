@@ -46,6 +46,7 @@ The calendar is the main resource, check it frequently. We will communicate thro
 3. Set the remote origin to be YOUR newly created repo (this is so you can make commits to your own repo on GitHub):
 
    ```bash
+   git remote remove origin
    git remote set-url origin <your newly made GitHub repo url>
    ```
 
@@ -61,7 +62,7 @@ The calendar is the main resource, check it frequently. We will communicate thro
    git pull starter main
    ```
 
-6. Send Vivek and Heidy the link to your repo via Messenger or iMessage
+6. Send Vivek and Heidy the link to your repo via iMessage
 
 </details>
 
