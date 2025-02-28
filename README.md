@@ -76,6 +76,7 @@ The calendar is the main resource, check it frequently. We will communicate thro
 
    ```bash
    pip install -r requirements.txt
+   pip install nltk
    ```
 2. Run the following (in a Python shell or script):
 
