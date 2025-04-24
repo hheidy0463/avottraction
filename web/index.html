@@ -1,0 +1,192 @@
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toxicity Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .container {
+            width: 300px;
+            margin: 0 auto;
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            resize: none;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Check Comment Toxicity</h2>
+        <textarea id="comment" rows="4" placeholder="Enter a comment"></textarea><br>
+        <button onclick="checkToxicity()">Check Toxicity</button>
+
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        // Function to send the comment to the backend API and display results
+        function checkToxicity() {
+            const comment = document.getElementById('comment').value;
+
+            // Send a POST request to the Flask backend
+            fetch('/check_toxicity', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ comment: comment }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Display the result in the "result" div
+                document.getElementById('result').innerHTML = `
+                    <p>Toxicity: ${data.toxicity}</p>
+                    <p>Severe Toxic: ${data.severe_toxic}</p>
+                    <p>Obscene: ${data.obscene}</p>
+                    <p>Threat: ${data.threat}</p>
+                    <p>Insult: ${data.insult}</p>
+                    <p>Identity Hate: ${data.identity_hate}</p>
+                `;
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+
+</body>
+</html>
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toxicity Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .container {
+            width: 300px;
+            margin: 0 auto;
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            resize: none;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+       
+    
+        <h2>Check YouTube Video Comments</h2>
+        <input type="text" id="video_id" placeholder="Enter YouTube Video ID"><br>
+        <button onclick="checkYouTubeComments()">Check YouTube Comments</button>
+    
+        <div class="result" id="result"></div>
+        <div class="result" id="youtube_result"></div>
+    </div>
+    
+    <script>
+        function checkToxicity() {
+            const comment = document.getElementById('comment').value;
+    
+            fetch('/check_toxicity', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ comment: comment }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('result').innerHTML = `
+                    <p>Toxicity: ${data.toxicity}</p>
+                    <p>Severe Toxic: ${data.severe_toxic}</p>
+                    <p>Obscene: ${data.obscene}</p>
+                    <p>Threat: ${data.threat}</p>
+                    <p>Insult: ${data.insult}</p>
+                    <p>Identity Hate: ${data.identity_hate}</p>
+                `;
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        }
+    
+        function checkYouTubeComments() {
+            const videoId = document.getElementById('video_id').value;
+    
+            fetch('/youtube_comments', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ video_id: videoId }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                let output = '<h3>Comments and Toxicity Levels</h3>';
+                data.forEach(comment => {
+                    output += `
+                        <p><strong>${comment.Username}</strong> (${comment.Date}): ${comment.Comment}</p>
+                        <p>Toxicity: ${comment.toxicity}, Severe Toxic: ${comment.severe_toxic}, Obscene: ${comment.obscene}, Threat: ${comment.threat}, Insult: ${comment.insult}, Identity Hate: ${comment.identity_hate}</p>
+                        <hr>
+                    `;
+                });
+                document.getElementById('youtube_result').innerHTML = output;
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+    
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+- **Evaluation Metrics:**
+  - **Loss:** `0.1905` on eval data indicates the model’s prediction error.
+  - **Accuracy:** ~79.5% – this is the subset accuracy, meaning about 80% of the time, all labels for a sample are correct.
+  - **Macro F1-score:** ~73.2% – provides an overall measure balanced across labels.
+  - **Per-label F1-scores:**  
+    - Label 1: ~66.15%  
+    - Label 2: ~86.42%  
+    - Label 3: ~76.51%  
+    - Label 4: ~63.82%
+    
+    
+  - **Per-label Accuracy:** Very high (ranging from ~90.4% to ~97.1%), which is common in multi-label tasks when many samples are correctly predicted per label.
+  - **ROC-AUC:** ~0.943 – an excellent score indicating the model has strong discriminative power between the classes.
+
+- **Training Metrics:**
+  - **Train Loss:** ~0.1469 after 5 epochs – showing good convergence.
+  - **Runtime:** Both training and evaluation speeds are provided, which help in understanding efficiency.
+
+- **Threshold Optimization:**
+  - The optimized thresholds per label are: `[0.3, 0.55, 0.6, 0.3]`.  
+    This means for each label, the model’s probability outputs are thresholded using these values to decide whether a label is positive.

@@ -1,0 +1,9 @@
+pandas
+numpy
+scikit-learn
+nltk
+torch
+transformers
+contractions
+emoji
+accelerate>=0.26.0
