@@ -191,33 +191,33 @@ print("Best thresholds per label:", best_thresholds)
 """
 9. Evaluate on Test Set
 """
-# X_test_clean = text_processor.transform(pd.Series(X_test)).tolist()
-# test_encodings = tokenizer(X_test_clean, truncation=True, padding=True, max_length=128)
-# test_dataset = AvottractionDataset(test_encodings, y_test)
+X_test_clean = text_processor.transform(pd.Series(X_test)).tolist()
+test_encodings = tokenizer(X_test_clean, truncation=True, padding=True, max_length=128)
+test_dataset = AvottractionDataset(test_encodings, y_test)
 
-# metrics = trainer.evaluate(test_dataset)
-# print("Test Set Performance: ", metrics)
+metrics = trainer.evaluate(test_dataset)
+print("Test Set Performance: ", metrics)
 
 # """
 # 10. Predictions on New Text (without UI)
 # For multi-label, the predictions are a vector of probabilities per label.
 # """
-# new_samples = [
-# "You are cute. Wanna go on a date?"
-# ]
-# sample_clean_texts = [preprocess_text(x) for x in new_samples]
-# # When tokenizing new samples, move the tensors to the device:
-# sample_encodings = tokenizer(sample_clean_texts, truncation=True, padding=True, return_tensors="pt")
-# sample_encodings = {k: v.to(device) for k, v in sample_encodings.items()}
+new_samples = [
+"You are cute. Wanna go on a date?"
+]
+sample_clean_texts = [preprocess_text(x) for x in new_samples]
+# When tokenizing new samples, move the tensors to the device:
+sample_encodings = tokenizer(sample_clean_texts, truncation=True, padding=True, return_tensors="pt")
+sample_encodings = {k: v.to(device) for k, v in sample_encodings.items()}
 
-# with torch.no_grad():
-#     outputs = model(**sample_encodings)
-#     logits = outputs.logits
-# # Apply sigmoid and threshold at 0.35 for multi-label predictions
-# probs = sigmoid(logits)
-# print("Raw probabilities:", probs.cpu().numpy())
+with torch.no_grad():
+    outputs = model(**sample_encodings)
+    logits = outputs.logits
+# Apply sigmoid and threshold at 0.35 for multi-label predictions
+probs = sigmoid(logits)
+print("Raw probabilities:", probs.cpu().numpy())
 
-# threshold = 0.1  # Try a lower threshold
-# predictions = (probs >= threshold).int().cpu().numpy()
-# print("Predictions:", predictions)
+threshold = 0.1  # Try a lower threshold
+predictions = (probs >= threshold).int().cpu().numpy()
+print("Predictions:", predictions)
 
