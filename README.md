@@ -18,8 +18,6 @@ Avottraction uses a modern approach to detect “attraction signals” in text t
 
 ## 👫 Project Members
 
-Project Manager: Miller Liu
-
 Project Leaders: Vivek and Heidy
 
 Project Members: Sanghun, Brooke, Sajiv, Karen, Shriyaa
